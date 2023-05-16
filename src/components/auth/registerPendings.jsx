@@ -17,7 +17,7 @@ const RegisterPendings = ({ _id }) => {
     if (formData?.fName && formData?.lName) {
       let res = null
       try {
-        res = await instance.put('/api/user/signup-finish', {
+        res = await instance.put(`${import.meta.env.VITE_BACKEND_URL}/api/user/signup-finish`, {
           fName: formData.fName,
           lName: formData.lName,
           _id

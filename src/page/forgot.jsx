@@ -34,7 +34,7 @@ const Forgot = () => {
           let res = null;
 
           try {
-            res = await instance.get("/api/user/forgot-check", {
+            res = await instance.get(`${import.meta.env.VITE_BACKEND_URL}/api/user/forgot-check`, {
               params: {
                 userId,
                 secret,

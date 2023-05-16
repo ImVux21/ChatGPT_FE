@@ -33,7 +33,7 @@ const Signup = () => {
         const checkPending = async () => {
           let res = null;
           try {
-            res = await instance.get("/api/user/checkPending", {
+            res = await instance.get(`${import.meta.env.VITE_BACKEND_URL}/api/user/checkPending`, {
               params: {
                 _id: id,
               },

@@ -65,7 +65,7 @@ const Main = () => {
           const getSaved = async () => {
             let res = null;
             try {
-              res = await instance.get("/api/chat/saved", {
+              res = await instance.get(`${import.meta.env.VITE_BACKEND_URL}/api/chat/saved`, {
                 params: {
                   chatId: id,
                 },
@@ -140,12 +140,12 @@ const InputArea = ({ status, chatRef, stateAction }) => {
 
       try {
         if (_id) {
-          res = await instance.put("/api/chat", {
+          res = await instance.put(`${import.meta.env.VITE_BACKEND_URL}/api/chat`, {
             chatId: _id,
             prompt,
           });
         } else {
-          res = await instance.post("/api/chat", {
+          res = await instance.post(`${import.meta.env.VITE_BACKEND_URL}/api/chat`, {
             prompt,
           });
         }

@@ -54,7 +54,7 @@ const LoginComponent = () => {
         e?.preventDefault()
         let res = null
         try {
-            res = await instance.get('/api/user/login', {
+            res = await instance.get(`${import.meta.env.VITE_BACKEND_URL}/api/user/login`, {
                 params: googleData || formData
             })
         } catch (err) {

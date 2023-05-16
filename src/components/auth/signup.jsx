@@ -46,7 +46,7 @@ const SignupComponent = () => {
     if (formData?.pass.length >= 8) {
       let res = null
       try {
-        res = await instance.post('/api/user/signup', formData)
+        res = await instance.post(`${import.meta.env.VITE_BACKEND_URL}/api/user/signup`, formData)
       } catch (err) {
         console.log(err)
         if (err?.response?.data.message?.exists) {

@@ -19,7 +19,7 @@ const ProtectedRoute = ({ offline, authed }) => {
       let res = null;
 
       try {
-        res = await instance.get("/api/user/checkLogged");
+        res = await instance.get(`${import.meta.env.VITE_BACKEND_URL}/api/user/checkLogged`);
         if (res?.data?.data) {
           dispatch(insertUser(res?.data?.data));
         }
